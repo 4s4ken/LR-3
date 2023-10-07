@@ -1,4 +1,4 @@
-﻿#include<iostream>
+#include<iostream>
 #include<string>
 #include <windows.h>
 #include<math.h>
@@ -71,7 +71,9 @@ bool danger2move(string s, int a, int b, int c, int d)
 	if (s == "Конь")
 	{
 		if (a <= 6 && b <= 7)
+		{
 			a += 2;b += 1;
+		}
 		z = abs(a - c), x = abs(b - d);
 		if ((x == 2 && z == 1) || (x == 1 && z == 2))
 		{
@@ -81,7 +83,9 @@ bool danger2move(string s, int a, int b, int c, int d)
 		a = k;b = l;
 
 		if (a <= 7 && b <= 6)
+		{
 			a += 1;b += 2;
+		}
 		z = abs(a - c), x = abs(b - d);
 			if ((x == 2 && z == 1) || (x == 1 && z == 2))
 			{
@@ -90,8 +94,10 @@ bool danger2move(string s, int a, int b, int c, int d)
 			}
 		a = k;b = l;
 
-		 	if (a >= 3 && b <= 7)
-		a -= 2;b += 1;
+		if (a >= 3 && b <= 7)
+		{
+			a -= 2;b += 1;
+		}
 		z = abs(a - c), x = abs(b - d);
 		if ((x == 2 && z == 1) || (x == 1 && z == 2))
 		{
@@ -101,7 +107,9 @@ bool danger2move(string s, int a, int b, int c, int d)
 		a = k;b = l;
 
 		if (a >= 1 && b <= 6)
+		{
 			a -= 1;b += 2;
+		}
 		z = abs(a - c), x = abs(b - d);
 		if ((x == 2 && z == 1) || (x == 1 && z == 2))
 		{
@@ -111,7 +119,9 @@ bool danger2move(string s, int a, int b, int c, int d)
 		a = k;b = l;
 
 		if (a >= 2 && b >= 1)
+		{
 			a -= 2;b -= 1;
+		}
 		z = abs(a - c), x = abs(b - d);
 			if ((x == 2 && z == 1) || (x == 1 && z == 2))
 			{
@@ -121,7 +131,9 @@ bool danger2move(string s, int a, int b, int c, int d)
 		a = k;b = l;
 
 		if (a >= 1 && b >= 2)
+		{
 			a -= 1;b -= 2;
+		}
 		z = abs(a - c), x = abs(b - d);
 			if ((x == 2 && z == 1) || (x == 1 && z == 2))
 			{
@@ -139,7 +151,9 @@ bool danger2move(string s, int a, int b, int c, int d)
 			a = k;b = l;
 
 			if (a <= 7 && b >= 2)
+			{
 				a += 1;b -= 2;
+			}
 			z = abs(a - c), x = abs(b - d);
 			if ((x == 2 && z == 1) || (x == 1 && z == 2))
 			{
@@ -315,11 +329,9 @@ int main()
 	string s;
 	int a, b, c, d;
 
-
+	cout << "Введите координаты своей фигуры:" << endl;
+	cin >> a >> b;
 	while(1)
-	{
-		cout << "Введите координаты своей фигуры:" << endl;
-		cin >> a >> b;
 		if (a>8 || a<=0 || b>8 || b<=0)
 		{
 			cout << "Ошибка вводы координат - неккоектные данные. Попробуйте снова начать ввод заново:" << endl;
@@ -327,12 +339,10 @@ int main()
 		}
 		else
 			break;
-	}
-
+	cout << "Введите координаты фигуры-противника:" << endl;
+	cin >> c >> d;
 	while (1)
 	{
-		cout << "Введите координаты фигуры-противника:" << endl;
-		cin >> c >> d;
 		if (c > 8 || c <= 0 || d>8 || d <= 0)
 			{
 				cout << "Ошибка вводы координат - неккоектные данные. Попробуйте снова начать ввод заново:" << endl;
@@ -364,7 +374,7 @@ int main()
 		cout << "Фигура не угрожает за 1 ход!" << endl;
 
 	if (danger2move(s, a, b, c, d) == true)
-		cout << " - координаты первого хода, угрожает за 2 хода.";
+		cout << " - координаты первого хода, угрожает за 2 хода." << endl;
 	else
-		cout << "Фигура не угрожает за 2 хода.";
+		cout << "Фигура не угрожает за 2 хода." << endl;
 }
