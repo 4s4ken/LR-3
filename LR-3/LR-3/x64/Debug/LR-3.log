@@ -1,0 +1,4 @@
+﻿  LR-3.cpp
+C:\Users\glebe\Downloads\+\LR-3\LR-3\LR-3.cpp(65): warning C4715: danger: значение возвращается не при всех путях выполнения
+C:\Users\glebe\Downloads\+\LR-3\LR-3\LR-3.cpp(310): warning C4715: danger2move: значение возвращается не при всех путях выполнения
+  LR-3.vcxproj -> C:\Users\glebe\Downloads\+\LR-3\x64\Debug\LR-3.exe
